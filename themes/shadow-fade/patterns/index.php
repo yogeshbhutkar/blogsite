@@ -45,7 +45,7 @@
 
 					<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-text-contrast"}}}},"textColor":"accent-text-contrast","fontSize":"level-1","fontFamily":"heebo"} -->
 					<p class="has-accent-text-contrast-color has-text-color has-link-color has-heebo-font-family has-level-1-font-size">
-						<?php esc_html_e( '2014', 'shadow-fade' ); ?>
+						<?php esc_html_e( '2015', 'shadow-fade' ); ?>
 					</p>
 					<!-- /wp:paragraph -->
 				</div>
