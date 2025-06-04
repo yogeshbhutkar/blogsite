@@ -11,8 +11,6 @@ services:
       WORDPRESS_DB_NAME: ${DB_NAME:-db}
     env_file:
       - .env
-    ports:
-      - "80:80"
     volumes:
       - wordpress_data:/var/www/html
       - ./themes/shadow-fade:/var/www/html/wp-content/themes/shadow-fade
