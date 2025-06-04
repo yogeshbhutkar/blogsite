@@ -1,0 +1,14 @@
+# Ignore Environment files
+.env
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore build output
+dist/
+
+# Ignore default theme.
+themes/twentytwentyfive/
+
+# Ignore compose overrides for local development.
+docker-compose.override.yml

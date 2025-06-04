@@ -1,0 +1,12 @@
+{
+  "name": "wp-blogsite",
+  "version": "1.0.0",
+  "scripts": {
+	"dev:up": "docker compose up -d",
+    "prod:up": "docker compose -f docker-compose.yml up -d",
+	"server:down": "docker compose down"
+  },
+  "author": "Yogesh Bhutkar",
+  "license": "ISC",
+  "description": "A WordPress blog site with Docker"
+}

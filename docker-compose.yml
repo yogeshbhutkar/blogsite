@@ -1,0 +1,35 @@
+name: WP_Blog
+
+services:
+  wordpress:
+    image: wordpress:6.8.1-php8.4
+    container_name: wordpress
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST:-db}
+      WORDPRESS_DB_USER: ${DB_USER:-primary}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:-password}
+      WORDPRESS_DB_NAME: ${DB_NAME:-db}
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./themes/shadow-fade:/var/www/html/wp-content/themes/shadow-fade
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:lts
+    container_name: mariadb
+    environment:
+      MARIADB_DATABASE: ${DB_NAME:-db}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpassword}
+      MARIADB_USER: ${DB_USER:-primary}
+      MARIADB_PASSWORD: ${DB_PASSWORD:-password}
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  wordpress_data:
+  db_data:
