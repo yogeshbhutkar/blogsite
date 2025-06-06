@@ -1,0 +1,22 @@
+{
+    "name": "yogeshbhutkar/wp-blogsite",
+    "autoload": {
+        "psr-4": {
+            "Yogeshbhutkar\\WpBlogsite\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yogeshbhutkar",
+            "email": "yogesh.bhutkar@rtcamp.com"
+        }
+    ],
+    "require-dev": {
+        "automattic/vipwpcs": "^3.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

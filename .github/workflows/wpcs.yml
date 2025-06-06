@@ -1,0 +1,21 @@
+name: Test WordPress Coding Standards
+on: [push, pull_request]
+
+jobs:
+  phpcs:
+      name: WPCS
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: WPCS check
+          uses: 10up/wpcs-action@stable
+          with:
+            standard: 'WordPress'
+            use_local_config: 'true'
+  linters:
+      name: stylelint
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v1
+        - uses: actions-hub/stylelint@master

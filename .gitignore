@@ -2,8 +2,9 @@
 .env
 .env.prod
 
-# Ignore Node.js dependencies
+# Ignore dependencies
 node_modules/
+vendor/
 
 # Ignore build output
 dist/

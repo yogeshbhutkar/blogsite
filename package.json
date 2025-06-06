@@ -2,11 +2,17 @@
   "name": "wp-blogsite",
   "version": "1.0.0",
   "scripts": {
-	"dev:up": "docker compose up -d",
+    "dev:up": "docker compose up -d",
     "prod:up": "docker compose -f docker-compose.yml up -d",
-	"server:down": "docker compose down"
+    "server:down": "docker compose down"
   },
   "author": "Yogesh Bhutkar",
   "license": "ISC",
-  "description": "A WordPress blog site with Docker"
+  "description": "A WordPress blog site with Docker",
+  "devDependencies": {
+    "@wordpress/prettier-config": "^4.25.0",
+    "@wordpress/stylelint-config": "^23.17.0",
+    "stylelint": "^16.20.0",
+    "stylelint-config-standard": "^38.0.0"
+  }
 }
