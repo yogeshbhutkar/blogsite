@@ -13,7 +13,7 @@ services:
       - .env
     volumes:
       - wordpress_data:/var/www/html
-      - ./themes/shadow-fade:/var/www/html/wp-content/themes/shadow-fade
+      - ./src/themes/shadow-fade:/var/www/html/wp-content/themes/shadow-fade
     depends_on:
       - db
 
