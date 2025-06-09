@@ -338,6 +338,7 @@
 				}
 			},
 			"core/post-date": {
+				"css": "& time { white-space: nowrap; }",
 				"elements": {
 					"link": {
 						":hover": {
@@ -349,8 +350,7 @@
 							"textDecoration": "none"
 						}
 					}
-				},
-				"css": "& time { white-space: nowrap; }"
+				}
 			},
 			"core/post-excerpt": {
 				"css": "& .wp-block-post-excerpt__more-link { background: var(--wp--preset--color--accent-2); color: var(--wp--preset--color--contrast); border: 1px solid var(--wp--preset--color--accent-border); padding: 4px 8px; border-radius: 8px; font-size: var(--wp--preset--font-size--small); }",
