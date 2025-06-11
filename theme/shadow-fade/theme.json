@@ -1,5 +1,14 @@
 {
 	"settings": {
+		"custom": {
+			"color": {
+				"base-dark": "#111111",
+				"contrast-dark": "#E1E1E1",
+				"accent-1-dark": "#161616",
+				"accent-2-dark": "#3D3D3D",
+				"accent-border-dark": "#494949"
+			}
+		},
 		"appearanceTools": true,
 		"color": {
 			"defaultDuotone": false,
@@ -7,47 +16,27 @@
 			"defaultPalette": false,
 			"palette": [
 				{
-					"color": "#111111",
+					"color": "#E1E1E1",
 					"name": "Base",
 					"slug": "base"
 				},
 				{
-					"color": "#E1E1E1",
+					"color": "#111111",
 					"name": "Contrast",
 					"slug": "contrast"
 				},
 				{
-					"color": "#161616",
+					"color": "#F3F3F3",
 					"name": "Accent 1",
 					"slug": "accent-1"
 				},
 				{
-					"color": "#3D3D3D",
+					"color": "#D2D2D2",
 					"name": "Accent 2",
 					"slug": "accent-2"
 				},
 				{
-					"color": "#503AA8",
-					"name": "Accent 3",
-					"slug": "accent-3"
-				},
-				{
-					"color": "#686868",
-					"name": "Accent 4",
-					"slug": "accent-4"
-				},
-				{
-					"color": "#FBFAF3",
-					"name": "Accent 5",
-					"slug": "accent-5"
-				},
-				{
-					"color": "color-mix(in srgb, currentColor 20%, transparent)",
-					"name": "Accent 6",
-					"slug": "accent-6"
-				},
-				{
-					"color": "#494949",
+					"color": "#CBCBCB",
 					"name": "Border Color",
 					"slug": "accent-border"
 				}
@@ -466,7 +455,8 @@
 			"fontWeight": "300",
 			"letterSpacing": "-0.1px",
 			"lineHeight": "1.4"
-		}
+		},
+		"css": ".is-dark { --wp--preset--color--base: var(--wp--preset--color--custom-base-dark, var(--wp--custom--color--base-dark)); --wp--preset--color--contrast: var(--wp--preset--color--custom-contrast-dark, var( --wp--custom--color--contrast-dark )); --wp--preset--color--accent-1: var(--wp--preset--color--custom-accent-1-dark, var(--wp--custom--color--accent-1-dark)); --wp--preset--color--accent-2: var(--wp--preset--color--custom-accent-2-dark, var(--wp--custom--color--accent-2-dark)); --wp--preset--color--accent-border: var(--wp--preset--color--custom-accent-border-dark,var(--wp--custom--color--accent-border-dark));}"
 	},
 	"templateParts": [
 		{
