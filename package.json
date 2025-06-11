@@ -2,17 +2,27 @@
   "name": "wp-blogsite",
   "version": "1.0.0",
   "scripts": {
-    "dev:up": "docker compose up -d",
-    "prod:up": "docker compose -f docker-compose.yml up -d",
-    "server:down": "docker compose down"
+    "build": "wp-scripts build --blocks-manifest --output-path=theme/shadow-fade/build --experimental-modules",
+    "start": "wp-scripts start --blocks-manifest --output-path=theme/shadow-fade/build --experimental-modules",
+    "format": "wp-scripts format ./src",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "server:down": "docker compose down",
+    "server:up:dev": "docker compose up -d",
+    "server:up:prod": "docker compose -f docker-compose.yml up -d"
   },
   "author": "Yogesh Bhutkar",
   "license": "ISC",
   "description": "A WordPress blog site with Docker",
   "devDependencies": {
+    "@wordpress/create-block": "^4.68.0",
     "@wordpress/prettier-config": "^4.25.0",
+    "@wordpress/scripts": "^30.18.0",
     "@wordpress/stylelint-config": "^23.17.0",
     "stylelint": "^16.20.0",
     "stylelint-config-standard": "^38.0.0"
+  },
+  "dependencies": {
+    "@wordpress/interactivity": "^6.25.0"
   }
 }

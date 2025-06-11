@@ -1,6 +1,7 @@
 # Ignore Environment files
 .env
 .env.prod
+config
 
 # Ignore dependencies
 node_modules/
@@ -14,3 +15,6 @@ themes/twentytwentyfive/
 
 # Ignore compose overrides for local development.
 docker-compose.override.yml
+
+# Ignore IDE specific files
+.vscode/
