@@ -17,14 +17,16 @@ wp_interactivity_state(
 		'lightLabel' => esc_html__( 'Switch to dark theme, currently light.', 'shadow-fade' ),
 	)
 );
+
+$block_attributes = get_block_wrapper_attributes(
+	array(
+		'data-wp-interactive' => 'shadow-fade/theme-mode-switch',
+	)
+);
 ?>
 
-<div
-	<?php echo esc_attr( get_block_wrapper_attributes() ); ?>
-	data-wp-interactive="shadow-fade/theme-mode-switch"
->
+<div <?php echo wp_kses_data( $block_attributes ); ?>>
 	<label
-		class="switch"
 		for="<?php echo esc_attr( $unique_id ); ?>"
 	>
 		<input
@@ -36,7 +38,7 @@ wp_interactivity_state(
 			data-wp-bind--aria-checked="state.isDark"
 			data-wp-bind--aria-label="state.generateAriaLabel"
 			data-wp-on--change="actions.toggleThemeMode"
-		>
-		<span class="slider round"></span>
+		/>
+		<span class="theme-mode-switch__slider"></span>
 	</label>
 </div>
