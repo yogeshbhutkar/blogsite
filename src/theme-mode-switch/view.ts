@@ -11,7 +11,7 @@ type ServerState = {
 	};
 };
 
-const body = document.body;
+const documentElement = document.documentElement;
 const prefersDark =
 	window.matchMedia &&
 	window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
@@ -27,8 +27,8 @@ const storeDef = {
 			const isDark = event.target.checked;
 			state.isDark = isDark;
 
-			// Update the body class based on the theme mode.
-			body.classList.toggle( 'is-dark', isDark );
+			// Update the class based on the theme mode.
+			documentElement.classList.toggle( 'is-dark', isDark );
 
 			// Save the theme mode preference in localStorage.
 			localStorage.setItem( 'theme-mode', isDark ? 'dark' : 'light' );
@@ -37,18 +37,7 @@ const storeDef = {
 	callbacks: {
 		onInit() {
 			const themePreference = localStorage.getItem('theme-mode');
-
-			if ( !themePreference && prefersDark ) {
-				// Update state and the corresponding dependents.
-				state.isDark = true;
-				body.classList.add( 'is-dark' );
-				localStorage.setItem( 'theme-mode', 'dark' );
-				return;
-			}
-
-			const isStoredPreferenceDark = themePreference === 'dark';
-			body.classList.toggle( 'is-dark', isStoredPreferenceDark );
-			state.isDark = isStoredPreferenceDark;
+			state.isDark = themePreference === 'dark' || ! themePreference && prefersDark;
 		},
 	},
 };

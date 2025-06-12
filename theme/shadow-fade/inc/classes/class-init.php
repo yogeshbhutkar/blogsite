@@ -28,6 +28,7 @@ final class Init {
 	 */
 	protected function __construct() {
 		add_action( 'init', array( $this, 'setup_blocks' ) );
+		add_action( 'wp_head', array( $this, 'setup_theme_classes' ) );
 	}
 
 	/**
@@ -75,5 +76,28 @@ final class Init {
 				sprintf( '%1$s/build/%2$s', SHADOW_FADE_DIR, $block_type )
 			);
 		}
+	}
+
+	/**
+	 * Setup theme classes
+	 *
+	 * Adds the .is-dark class to the DOM based on user stored preference.
+	 *
+	 * @return void
+	 */
+	public function setup_theme_classes() {
+		?>
+		<script>
+			(function() {
+				const themePreference = localStorage.getItem('theme-mode');
+				const prefersDark =
+					window.matchMedia &&
+					window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
+				document.documentElement.classList.toggle(
+					'is-dark', themePreference === 'dark' || ! themePreference && prefersDark
+				);
+			})();
+		</script>
+		<?php
 	}
 }
